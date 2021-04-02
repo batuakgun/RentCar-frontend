@@ -1,1 +1,15 @@
-<p>color works!</p>
+<!-- <li class="list-group-item list-group-item-primary">Renkler</li>
+<ul class="list-group" *ngFor="let color of colors">
+    <li class="list-group-item">{{color.colorName}}</li>
+    
+  </ul> -->
+
+  <div class="card">
+    <div class="card-header">Renkler</div>
+    <select (change)="setCurrentColor()" [(ngModel)]="currentColor" class="form-select">
+      <option [ngValue]="allColor" [selected]="allColorSelected()" class="option">Tüm Renkler</option>
+      <option *ngFor="let color of colors" [ngValue]="color" class="option">
+        {{ color.colorName }}
+      </option>
+    </select>
+  </div>

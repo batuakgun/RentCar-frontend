@@ -1,23 +1,32 @@
-<table class="table">
-    <thead>
-        <tr>
-            <th>Marka</th>
-            <th>Renk</th>
-            <th>Model Yılı</th>
-            <th>Günlük Ücret</th>
-            <th>Açıklama</th>
-            
- 
-        </tr>
-    </thead>
-    <tr *ngFor="let car of cars">
-        <td>{{car.brandName}}</td>
-        <td>{{car.colorName}}</td>
-        <td>{{car.modelYear}}</td>
-        <td>{{car.dailyPrice}}</td>
-        <td>{{car.descriptions}}</td>
-        
 
-        
-    </tr>
-</table>
+    <div class="carousel-inner">
+      <div *ngFor="let image of images; let i = index" [ngClass]="getSliderClassName(i)">
+        <img src="{{ imageUrl }}/{{ image.imagePath }}" class="d-block w-100" width="800" height="400" alt="..." />
+      </div>
+    </div>
+
+    <table class="table table-striped">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Marka</th>
+            <th scope="col">Renk</th>
+            <th scope="col">Model Yılı</th>
+            <th scope="col">Günlük Ücret</th>
+            <th scope="col">Açıklama</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let car of cars"
+          (click)="setCurrentCar(car)" routerLink="/cars/details/{{car.carId}}">
+            <td>{{car.carId}}</td>
+            <td>{{car.brandName |uppercase}}</td>
+            <td>{{car.colorName}}</td>
+            <td>{{car.modelYear}}</td>
+            <td>{{car.dailyPrice | vatAdded:15 |currency}}</td>
+            <td>{{car.descriptions}}</td>
+            <td><button type="button" class="btn btn-success">Get Details</button></td>
+        </tbody>
+      </table>    
+    
+       

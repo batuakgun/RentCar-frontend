@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Car } from '../models/car';
 import { ListResponseModel } from '../models/listResponseModel';
+import { SingleResponseModel } from '../models/singleResponseModel';
 
 @Injectable({
   providedIn: 'root'
@@ -19,12 +20,17 @@ export class CarService {
   }
 
   getCarsByBrand(brandId:number):Observable<ListResponseModel<Car>> {
-    let newPath = this.apiUrl + "getcardetailsbybrand?id=" + brandId
+    let newPath = this.apiUrl + "getbybrand?brandId=" + brandId
     return this.httpClient.get<ListResponseModel<Car>>(newPath);
   }
 
   getCarsByColor(colorId:number):Observable<ListResponseModel<Car>> {
-    let newPath = this.apiUrl + "getcardetailsbybrand?id=" + colorId
+    let newPath = this.apiUrl + "getbycolor?colorId=" + colorId
     return this.httpClient.get<ListResponseModel<Car>>(newPath);
+  }
+
+  getCarDetails(carId:number):Observable<SingleResponseModel<Car>>{
+    let newPath = this.apiUrl + 'getcardetailbyid?carId='+carId;
+    return this.httpClient.get<SingleResponseModel<Car>>(newPath)
   }
 }
