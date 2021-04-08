@@ -26,8 +26,8 @@
 ></div>
 
 <div class="m-3">
-  <label for="exampleFormControlInput1" class="form-label" style="color:rgb(74, 141, 7);">Marka Ara</label>
-  <input type="text" [(ngModel)]="filterText" class="form-control" id="filterText" style="border-radius: 10px; border-color: rgb(74, 141, 7);" placeholder="Marka...">
+  <label for="exampleFormControlInput1" class="form-label" style="color:rgb(120, 128, 112);">Marka Ara</label>
+  <input type="text" [(ngModel)]="filterText" class="form-control" id="filterText" style="border-radius: 10px; border-color: rgb(155, 163, 147);" placeholder="Marka...">
 </div>
 
 <div *ngIf="filterText.length>2" class="alert-warning m-2">
@@ -38,7 +38,7 @@
     class="list-group list-group-flush m-4">
     
     <h4 class="ps-2"
-    style="background-color: lightblue; border-radius: 10px; height: 28px;">
+    style="background-color: rgb(202, 213, 218); border-radius: 5px; height: 28px;">
     Markalar
 </h4>
 
@@ -56,7 +56,7 @@
     (click)="clearFilter()"
     type="button"
     aria-current="true"
-    class="btn btn-info"
+    class="btn btn-secondary"
   >
     Temizle
   </button>

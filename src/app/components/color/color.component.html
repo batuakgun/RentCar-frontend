@@ -21,8 +21,8 @@
 ></div>
 
 <div class="m-3">
-  <label for="exampleFormControlInput1" class="form-label" style="color:rgb(74, 141, 7);">Renkten Ara</label>
-  <input type="text" [(ngModel)]="filterText" class="form-control" id="filterText" style="border-radius: 10px; border-color: rgb(74, 141, 7);" placeholder="Renk...">
+  <label for="exampleFormControlInput1" class="form-label" style="color:rgb(82, 83, 81);">Renkten Ara</label>
+  <input type="text" [(ngModel)]="filterText" class="form-control" id="filterText" style="border-radius: 10px; border-color: rgb(187, 197, 176);" placeholder="Renk...">
 </div>
 <div *ngIf="filterText.length>2" class="alert-warning m-2">
   {{filterText}} sorgulanıyor...
@@ -33,8 +33,8 @@
   class="list-group list-group-flush m-4">
   
 <h4 class="ps-2"
-  style="background-color: lightblue; border-radius: 10px; height: 28px;">
-  Colors
+  style="background-color: rgb(208, 221, 226); border-radius: 5px; height: 28px;">
+  Renkler
 </h4> 
   
 <li
@@ -51,7 +51,7 @@
   (click)="clearFilter()"
   type="button"
   aria-current="true"
-  class="btn btn-info"
+  class="btn btn-secondary"
 >
   Temizle
 </button>

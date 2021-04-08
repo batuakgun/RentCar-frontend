@@ -56,7 +56,7 @@
       </div>
       <form [formGroup]="cardAddForm">
         <div *ngIf="creditCards.length>0" class="mb-3" style="width: 12rem;">
-          <label for="customerCard">Your Credit Cards</label>
+          <label for="customerCard">Kartlarınız</label>
           <select class="form-control" (ngModelChange)="setCardInfos()" formControlName="customerCard" required
             id="customerCard" name="customerCard">
             <option *ngFor="let card of creditCards" [value]="card.id" class="form-control">{{card.nameOnTheCard}}
@@ -96,7 +96,7 @@
               <img src="{{imageURL}}/uploads/yellowCard.png" alt="No IMG" style="width: 40px;">
               <img src="{{imageURL}}/uploads/redCard.png" alt="No IMG" style="width: 40px;">
               <img src="{{imageURL}}/uploads/blueCard.png" alt="No IMG" style="width: 40px;">
-              <strong>{{ amount | currency }} PAY </strong>
+              <strong>{{ amount | currency }} ÖDE </strong>
             </button>
           </div>
         </div>

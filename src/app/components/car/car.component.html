@@ -17,43 +17,7 @@
             </div>
             
    
-            <!-- <table *ngIf="cars" class="table table-dark table-hover">
-              <thead>
-                <tr>
-                  <th scope="col" style= "background-color: rgb(146, 156, 151); border-radius: 5px">Marka</th>
-                  <th scope="col" style= "background-color: rgb(146, 156, 151);border-radius: 5px">Renk</th>
-                  <th scope="col" style= "background-color: rgb(146, 156, 151);border-radius: 5px">Model Yılı</th>
-                  <th scope="col" style= "background-color: rgb(146, 156, 151);border-radius: 5px">Günlük ücret</th>
-                  <th scope="col" style= "background-color: rgb(146, 156, 151);border-radius: 5px">Günlük ücret + KDV</th>
-                  <th scope="col" style= "background-color: rgb(146, 156, 151);border-radius: 5px">Açıklama</th>
-                  <th scope="col" style= "background-color: rgb(146, 156, 151);border-radius: 5px">Findex Puanı</th>
-                  <th scope="col" style= "background-color: rgb(146, 156, 151);border-radius: 5px">Detaylar</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr *ngFor="let car of cars"
-                (click)="setCurrentCar(car)"
-                routerLink = "/cars/details/{{car.carId}}"
-                [class]="getCarClass(car)">
-                  <td>{{ car.brandName | uppercase }}</td>
-                  <td>{{ car.colorName}}</td>
-                  <td>{{ car.modelYear }}</td>
-                  <td>{{ car.dailyPrice | currency }}</td>
-                  <td>{{ car.dailyPrice | vatAdded:8 | currency}}</td>
-                  <td>{{ car.descriptions }}</td>
-                  <td>{{ car.minFindexScore }}</td>
-                  <td><button type="button" class="btn btn-success">Detay</button></td>
-                </tr>
-              </tbody>
-            </table> -->
             
-      <!-- <div class="container marketing" style="text-align: center;">
-        <span class="d-block p-3 text-dark mb-4 " style="background-color: rgb(184, 184, 179); ">
-          <div class="fs-4 fw-normal">
-      Tüm Arabalar
-    </div>
-    </span>
-  </div> -->
       <div class="row">
         <div class="col-lg-4 col-md-6 col-sm-12 mb-3" *ngFor="let car of cars ">
             <div  class="card" style="width: 100%;">
@@ -69,7 +33,7 @@
                   <hr>
                   <p> <b>Renk :</b> {{car.colorName}} </p>
                   <hr>
-                  <a routerLink="/cars/detail/{{car.carId}}" class="btn btn-outline-dark mt-2">Detay</a>
+                  <a routerLink="/cars/details/{{car.carId}}" class="btn btn-outline-dark mt-2">Detay</a>
                 </div>
               </div>
             </div>
