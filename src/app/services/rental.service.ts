@@ -20,7 +20,8 @@ export class RentalService {
   }
 
   addRental(rental:Rental):Observable<ResponseModel>{
-    return this.httpClient.post<ResponseModel>(this.apiUrl+"add",rental);
+    let newPath = this.apiUrl + "add";
+    return this.httpClient.post<ResponseModel>(newPath,rental);
   }
 
 

@@ -9,12 +9,12 @@ import { Payment } from '../models/payment';
 })
 export class PaymentService {
 
-  apiUrl = 'https://localhost:44360/api/'
+  apiUrl = 'https://localhost:44360/api/payments'
 
   constructor(private httpClient:HttpClient) { }
 
   payment(payment:Payment):Observable<ResponseModel>{
-    let newPath = this.apiUrl+'rentals/payment';
+    let newPath = this.apiUrl+'testpayment';
     return this.httpClient.post<ResponseModel>(newPath,payment);
   }
 }

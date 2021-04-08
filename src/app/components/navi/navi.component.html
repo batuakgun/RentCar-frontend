@@ -1,36 +1,69 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="container-fluid">
-      <a class="navbar-brand" href="#">RentCar</a>
+      <a class="navbar-brand" href="">Rent-Car</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+      <div class="collapse navbar-collapse m-2" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto ms-5 mb-lg-0">
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#">Home</a>
+            <a class="nav-link active" aria-current="page" href="">Ana Sayfa</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Link</a>
+            <a class="nav-link active" aria-current="page" href="cars">Arabalar</a>
           </li>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              Filtreler
+              Seçenekler
             </a>
             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
               <li><a class="dropdown-item" routerLink="/cars">Arabalar</a></li>
               <li><a class="dropdown-item" routerLink="/brands">Markalar</a></li>
               <li><a class="dropdown-item" routerLink="/colors">Renkler</a></li>
-              <li><a class="dropdown-item" href="#">Something else here</a></li>
+              
             </ul>
+            
           </li>
-          <li class="nav-item">
-            <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
-          </li>
+          
         </ul>
-        <form class="d-flex">
-          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-          <button class="btn btn-outline-success" type="submit">Search</button>
-        </form>
+        <div class="mb-0" >
+          <ul class="navbar-nav me-auto ms-5 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link " aria-current="page" href="/rentcar/aboutus">Hakkımızda</a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="mb-2" *ngIf="!isLogOK()">
+          
+          <form class="d-flex">
+            <div class="d-flex btn-group ps-4" role="group" aria-label="Basic radio toggle button group">
+
+              <input type="radio" class="btn-check" name="btnradio" id="btnradio1" autocomplete="off">
+              <label class="btn btn-light" for="btnradio1" routerLink="/login">Giriş Yap</label>
+
+              <input type="radio" class="btn-check" name="btnradio" id="btnradio2" autocomplete="off">
+              <label class="btn btn-secondary " for="btnradio2" routerLink="/register">Kayıt Ol</label>
+
+            </div>
+          </form>
+        </div>
+        
+        <div class="mb-0" *ngIf="isLogOK()">
+          <ul class="navbar-nav me-auto ms-2 mb-lg-0">
+            
+          <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false"> Profil
+            {{getUser()}} 
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <li><a class="dropdown-item " routerLink="/user/edit/">Bilgileriniz</a></li>
+              <li><a class="dropdown-item" (click)="logout()" routerLink="">Çıkış Yap</a></li>
+          </ul>
+          </li>
+          </ul>
+            </div>
       </div>
     </div>
+    
   </nav>

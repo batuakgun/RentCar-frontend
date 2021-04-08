@@ -1,32 +1,80 @@
 
-    <div class="carousel-inner">
-      <div *ngFor="let image of images; let i = index" [ngClass]="getSliderClassName(i)">
-        <img src="{{ imageUrl }}/{{ image.imagePath }}" class="d-block w-100" width="800" height="400" alt="..." />
+      <div class="row">
+        <div class="col-md-3">
+          <div class="sticky-top sidebar m-2">
+            <div class="box"><app-brand></app-brand></div>
+            
+          </div>
+          
+        </div>  
+        
+      
+        <div class="col-md-6 ms-2">
+          <div class="body">
+      
+            <div *ngIf="!(cars && (brands || colors))" class="alert alert-info w-100" role="alert">
+              Araba Yok
+            </div>
+            
+   
+            <!-- <table *ngIf="cars" class="table table-dark table-hover">
+              <thead>
+                <tr>
+                  <th scope="col" style= "background-color: rgb(146, 156, 151); border-radius: 5px">Marka</th>
+                  <th scope="col" style= "background-color: rgb(146, 156, 151);border-radius: 5px">Renk</th>
+                  <th scope="col" style= "background-color: rgb(146, 156, 151);border-radius: 5px">Model Yılı</th>
+                  <th scope="col" style= "background-color: rgb(146, 156, 151);border-radius: 5px">Günlük ücret</th>
+                  <th scope="col" style= "background-color: rgb(146, 156, 151);border-radius: 5px">Günlük ücret + KDV</th>
+                  <th scope="col" style= "background-color: rgb(146, 156, 151);border-radius: 5px">Açıklama</th>
+                  <th scope="col" style= "background-color: rgb(146, 156, 151);border-radius: 5px">Findex Puanı</th>
+                  <th scope="col" style= "background-color: rgb(146, 156, 151);border-radius: 5px">Detaylar</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let car of cars"
+                (click)="setCurrentCar(car)"
+                routerLink = "/cars/details/{{car.carId}}"
+                [class]="getCarClass(car)">
+                  <td>{{ car.brandName | uppercase }}</td>
+                  <td>{{ car.colorName}}</td>
+                  <td>{{ car.modelYear }}</td>
+                  <td>{{ car.dailyPrice | currency }}</td>
+                  <td>{{ car.dailyPrice | vatAdded:8 | currency}}</td>
+                  <td>{{ car.descriptions }}</td>
+                  <td>{{ car.minFindexScore }}</td>
+                  <td><button type="button" class="btn btn-success">Detay</button></td>
+                </tr>
+              </tbody>
+            </table> -->
+            
+      <!-- <div class="container marketing" style="text-align: center;">
+        <span class="d-block p-3 text-dark mb-4 " style="background-color: rgb(184, 184, 179); ">
+          <div class="fs-4 fw-normal">
+      Tüm Arabalar
+    </div>
+    </span>
+  </div> -->
+      <div class="row">
+        <div class="col-lg-4 col-md-6 col-sm-12 mb-3" *ngFor="let car of cars ">
+            <div  class="card" style="width: 100%;">
+                <img src="{{imageUrl}}{{car.imagePath}}" class="card-img-top" alt="Araba Resmi">
+                <div class="card-body">
+                  <h5 class="card-title text-center">{{car.descriptions | uppercase}}</h5>
+                  <hr>
+                  <p> <b>Marka :</b> {{car.brandName }} </p>
+                  <hr>
+                  <p> <b>Model Yılı :</b> {{car.modelYear}} </p>
+                  <hr>
+                  <p> <b class="pull-left">Günlük Fiyatı :</b> {{car.dailyPrice|currency: "TRY":""}} ₺</p>
+                  <hr>
+                  <p> <b>Renk :</b> {{car.colorName}} </p>
+                  <hr>
+                  <a routerLink="/cars/detail/{{car.carId}}" class="btn btn-outline-dark mt-2">Detay</a>
+                </div>
+              </div>
+            </div>
+          </div>
+    
+        </div>
       </div>
     </div>
-
-    <table class="table table-striped">
-        <thead>
-          <tr>
-            <th scope="col">#</th>
-            <th scope="col">Marka</th>
-            <th scope="col">Renk</th>
-            <th scope="col">Model Yılı</th>
-            <th scope="col">Günlük Ücret</th>
-            <th scope="col">Açıklama</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr *ngFor="let car of cars"
-          (click)="setCurrentCar(car)" routerLink="/cars/details/{{car.carId}}">
-            <td>{{car.carId}}</td>
-            <td>{{car.brandName |uppercase}}</td>
-            <td>{{car.colorName}}</td>
-            <td>{{car.modelYear}}</td>
-            <td>{{car.dailyPrice | vatAdded:15 |currency}}</td>
-            <td>{{car.descriptions}}</td>
-            <td><button type="button" class="btn btn-success">Get Details</button></td>
-        </tbody>
-      </table>    
-    
-       

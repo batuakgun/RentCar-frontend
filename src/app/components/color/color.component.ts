@@ -14,6 +14,8 @@ export class ColorComponent implements OnInit {
   colors:Color[]=[];
   currentColor :Color;
   allColor:Color;
+  dataLoaded = false;
+  filterText="";
   @Output() colorId = new EventEmitter<string>();
 
   ngOnInit(): void {
@@ -23,15 +25,37 @@ export class ColorComponent implements OnInit {
   getColors(){
     this.colorService.getColors().subscribe(response=>{
       this.colors=response.data
+      this.dataLoaded=true;
     })
   }
 
-  setCurrentColor(){    
-    this.colorId.emit(this.currentColor?.colorId.toString());
+  setCurrentColor(color:Color){    
+    this.currentColor=color;
   } 
 
   allColorSelected(){
     return this.currentColor == undefined ? true : false;
   } 
+
+  clearFilter() {
+    this.filterText = "";
+    this.getColors();
+  }
+
+  getAllColorClass() {
+    if (!this.currentColor) {
+      return 'list-group-item active cursorPointer';
+    } else {
+      return 'list-group-item cursorPointer';
+    }
+  }
+
+  getColorClass(color:Color){
+    if(color == this.currentColor){
+      return "list-group-item active cursorPointer"
+    }else{
+      return "list-group-item cursorPointer"
+    }
+  }
 
 }

@@ -1,0 +1,154 @@
+<main class="m-2">
+    <div id="myCarousel" class="carousel slide" data-bs-ride="carousel">
+      <div class="carousel-indicators">
+        <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+      </div>
+
+      <div class="carousel-inner">
+
+        <div class="carousel-item active"><img class="bd-placeholder-img " 
+          width="250" height="250" 
+          src="{{imageUrl}}/uploads/homepage13.jpg"
+          role="img">
+          <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="#777"/></svg>
+  
+          <div class="container">
+            <div class="carousel-caption text-start"><h1 style="font-size:80px;
+              font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+              color: rgb(227, 236, 211);">Rent-Car</h1>
+              
+              <p><a class="btn btn-lg btn-dark  btn-outline-white" routerLink="/login">Hemen Kirala</a></p>
+            </div>
+          </div>
+        </div>
+
+        <div class="carousel-item"><img class="bd-placeholder-img " 
+          src="{{imageUrl}}/uploads/homepage14.jpg"
+          role="img">
+          <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="#777"/></svg>
+
+          <div class="container">
+            <div class="carousel-caption">
+              <h1 style="font-size:80px;
+              font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+              color: rgb(227, 236, 211);">Arabalar</h1>
+              <p><a class="btn btn-lg btn-dark  btn-outline-white"routerLink="/cars">Tüm Arabalar</a></p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Geri</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#myCarousel" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">İleri</span>
+      </button>
+    </div>
+  
+    <div class="container marketing">
+    
+      <div class="row">
+        <div class="container marketing" style="text-align: center;">
+          <span class="d-block p-3 text-dark mb-4 " style="background-color: rgb(223, 223, 217); ">
+            <div class="fs-4 fw-normal">
+        Popüler Markalar
+      </div>
+      </span>
+    </div>
+
+        <div style="text-align:center" class="col-lg-4">
+          <img class="bd-placeholder-img rounded-circle" 
+          width="250" height="250" 
+          src="{{imageUrl}}/uploads/teslalogo.jpg"
+          role="img">
+          <div class="m-2">
+          <p><a class="btn btn-lg btn-secondary btn-outline-white" routerLink="/cars">Tesla</a></p>
+        </div>
+        </div>
+
+        <div style="text-align:center" class="col-lg-4">
+          <img class="bd-placeholder-img rounded-circle" 
+          width="250" height="250" 
+          src="{{imageUrl}}/uploads/mercedeslogo.png"
+          role="img">
+          <div class="m-2">
+          <p><a class="btn btn-lg btn-secondary btn-outline-white"routerLink="/cars">Mercedes-Benz</a></p>
+        </div>
+        </div>
+
+        <div style="text-align:center" class="col-lg-4">
+          <img class="bd-placeholder-img rounded-circle" 
+          width="250" height="250" 
+          src="{{imageUrl}}/uploads/bmwlogo.jpg"
+          role="img">
+          <div class="m-2">
+          <p><a class="btn btn-lg btn-secondary btn-outline-white"routerLink="/cars">BMW</a></p>
+        </div>
+        </div>
+
+        <!-- <div style="text-align:center" class="col-lg-4">
+          <img class="bd-placeholder-img rounded-circle" 
+          width="250" height="250" 
+          src="{{imageUrl}}/uploads/homepage5.jpg"
+          role="img">
+          <p><a class="btn btn-lg btn-outline-info"routerLink="/cars">Audi</a></p>
+        </div>
+
+        <div style="text-align:center" class="col-lg-4">
+          <img class="bd-placeholder-img rounded-circle" 
+          width="250" height="250" 
+          src="{{imageUrl}}/uploads/homepage1.jpg" 
+          role="img" >
+          <p><a class="btn btn-lg btn-outline-info"routerLink="/cars">Renault</a></p>
+        </div>
+
+        <div style="text-align:center" class="col-lg-4">
+          <img class="bd-placeholder-img rounded-circle" 
+          width="250" height="250"
+          src="{{imageUrl}}/uploads/homepage2.jpg"
+           role="img" >
+           <p><a class="btn btn-lg btn-outline-info"routerLink="/cars">Chevrolet</a></p>
+        </div>-->
+      </div> 
+    
+      
+  
+    
+  
+  <div class="row" >
+    <div class="container marketing" style="text-align: center;">
+      <span class="d-block p-3 text-dark mb-4 " style="background-color: rgb(223, 223, 217); ">
+        <div class="fs-4 fw-normal">
+    Popüler Arabalar
+  </div>
+  </span>
+</div>
+    <div class="col-lg-4 col-md-6 col-sm-12 mb-3" *ngFor="let car of cars "  >
+        <div  class="card" style="width: 100%;">
+            <img  src="{{imageUrl}}{{car.imagePath}}" class="card-img-top" alt="Araba Resmi">
+            <div class="card-body">
+              <h5 class="card-title text-center">{{car.descriptions | uppercase}}</h5>
+              <hr>
+              <p> <b>Marka :</b> {{car.brandName }} </p>
+              <hr>
+              <p> <b>Model Yılı :</b> {{car.modelYear}} </p>
+              <hr>
+              <p> <b class="pull-left">Günlük Fiyatı :</b> {{car.dailyPrice|currency: "TRY":""}} ₺</p>
+              <hr>
+              <p> <b>Renk :</b> {{car.colorName}} </p>
+              <hr>
+              <a routerLink="cars/details/{{car.carId}}" class="btn btn-md btn-secondary btn-outline-white mt-2">Detay</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    </main>
+
+ 
+ 

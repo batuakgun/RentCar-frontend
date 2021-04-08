@@ -1,5 +1,6 @@
 import { Component, OnInit, Output,EventEmitter } from '@angular/core';
 import { Brand } from 'src/app/models/brand';
+import { Color } from 'src/app/models/color';
 import { BrandService } from 'src/app/services/brand.service';
 
 @Component({
@@ -11,6 +12,8 @@ export class BrandComponent implements OnInit {
   brands:Brand[]=[];
   currentBrand:Brand;
   allBrand:Brand;
+  filterText="";
+  dataLoaded = false;
   @Output() brandId = new EventEmitter<string>();
   
 
@@ -19,6 +22,7 @@ export class BrandComponent implements OnInit {
   ngOnInit(): void {
     console.log("Brandın initi çalıştı")
     this.getBrands();
+    this.dataLoaded=true;
   }
 
   getBrands(){
@@ -44,5 +48,9 @@ export class BrandComponent implements OnInit {
   setCurrentBrand2(){    
     this.brandId.emit(this.currentBrand?.brandId.toString());
 } 
+clearFilter() {
+  this.filterText = "";
+  this.getBrands();
+}
 
 }
