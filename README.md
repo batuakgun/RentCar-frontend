@@ -15,7 +15,7 @@
 ![güncelleme ](https://user-images.githubusercontent.com/77547100/114070118-5ac94680-98a8-11eb-8015-c9655c943363.png)
 ### Details
 ![detay](https://user-images.githubusercontent.com/77547100/114070130-5bfa7380-98a8-11eb-9e3f-cff7bf9008f6.png)
-###Rent
+### Rent
 ![kiralama](https://user-images.githubusercontent.com/77547100/114070139-5e5ccd80-98a8-11eb-9c82-4e03980ffda4.png)
 ### Pay Service
 ![ödeme](https://user-images.githubusercontent.com/77547100/114070146-5f8dfa80-98a8-11eb-84a9-58cb903ff1be.png)
