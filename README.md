@@ -1,3 +1,6 @@
+## Name: Batuhan Akgün
+## Email: bakgun5734@gmail.com
+## LinkedIn: https://www.linkedin.com/in/batuhan-akg%C3%BCn-265236176/
 # About My Project
 ## Homepage
 ![anasayfa1](https://user-images.githubusercontent.com/77547100/114069605-d8d91d80-98a7-11eb-9d74-a7effe1eb9c0.png)
